@@ -1,0 +1,55 @@
+
+
+<html>
+<head>
+
+</head>
+<body>
+
+   <form name="myForm" 
+onsubmit="return CheckPassword()" method="post">
+  
+  password:<br>
+  <input type="text" name="lastname"  id="password" pattern="^0[1-9]|[1-9]\d$">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+</body>
+
+
+<script>
+   function testpassword()
+   {
+      var pass = document.getElementById("password").value;
+	  
+
+	  if ( ((pass.length) < 8) )
+	  {
+	     alert("Password should be greater than 8 characters and should include 2 numbers.");
+		 
+		 return false;
+	  }
+	     }
+		 
+		 function CheckPassword() 
+			{ 
+			
+			var passtest = document.getElementById("password").value;
+			
+			var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,50}$/;
+			
+			if(passtest.value.match(passw)) 
+			{ 
+			alert('Correct, try another...')
+			return true;
+			}
+			else
+			{ 
+			alert('Wrong...!')
+			return false;
+			}
+			}
+</script>
+</html>
