@@ -10,7 +10,7 @@ body {
 /* Style the header */
 header {
     background-color: #666;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     font-size: 25px;
     color: white;
@@ -21,7 +21,7 @@ article {
     padding: 20px;
     width: 100%;
     background-color: #f1f1f1;
-    height: 300px; /* only for demonstration, should be removed */
+    height: 360px; /* only for demonstration, should be removed */
 }
 
 /* Clear floats after the columns */
