@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>WMSystems</title>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="master.css">
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+window.onload = function() {
+$('#submit_button').click(function(){
+	alert("We made it");
+	$.ajax({
+        url : '/users',
+        method : 'GET',
+        success : function(data){
+           var response = JSON.parse(data);
+		   console.log(response);
+        },
+      
+        error: function(err){
+          console.log('Failed');
+        }
+   });
+   //Posts to the database using php
+   const username = document.getElementById("username");
+      	$.ajax({
+		method: "POST",
+		url: "/users",
+		data: JSON.strigify({username:username.value}),
+		cache: false,
+		success: function(data) { //not sure what to pass as argument
+			alert("Successfuly submitted information"); //not sure what to pass as argument
+		}
+	});
+   })
+   
+
+
+}
+  
+    
+   
+   //my code starts here ....
+   
+   // AJAX code to submit form.
+ 
+
+	
+ function validate()
+ {
+  var value = document.getElementById('username').value;
+  
+  if(value == "")
+	{
+	alert("Must provide username.")
+	}
+	else if(value.length <= 8)
+	{
+		alert("Username should have atleast 8 characters.");
+		return false;
+	}
+	else{
+   alert("You entered correct username")
+   
+	}
+	}
+ 
+ 
+ 
+</script>
+
+</head>
+
+<body>
+
+<header>
+	<center>
+		<h2>Wealth Management System</h2>
+		<h5>(a "robo-advisor")</h5>
+	</center>
+</header>
+
+<form name= "myForm" id = "form" action=""
+ onsubmit = "validate()">
+ 
+Username: <br> <input type ="text" id = "username"> 
+
+		  <br> <input type ="submit" value="Submit" id = "submit_button" >
+
+
+</form>
+
+<section>
+  <article>
+   <center>
+    <h1>Log In</h1>
+    <center>
+ 		<form>
+  			User Name:
+  		<input type="text" name="username">
+  		<br><br>
+  			   Password :
+  		<input type="text" name="password">
+  		<br><br>
+  		<input type="submit" value="Log In">
+  		<input type="submit" value="Sign Up">
+		</form>   
+	</article>
+</section>
+
+<footer>
+  <p>Desined by CCSU-Agile-Team-1</p>
+</footer>
+
+</body>
+
+</html>
