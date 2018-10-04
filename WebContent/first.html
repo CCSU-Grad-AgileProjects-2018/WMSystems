@@ -8,7 +8,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="master.css">
 
-<script type="text/javascript" src="FirstJS.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  
+    $('#submit_button').click(function(){
+	alert("We made it");
+	$.ajax({
+        url : '/users',
+        method : 'GET',
+        success : function(data){
+           var response = JSON.parse(data);
+		   console.log(response);
+        },
+      
+        error: function(err){
+          console.log('Failed');
+        }
+   });})
+	
+ function validate()
+ {
+  var value = document.getElementById('username').value;
+  
+  if(value == "")
+ {
+ alert("Must provide username.")
+ }
+ else if(value.length <= 8)
+ {
+ alert("Username should have atleast 8 characters.");
+ return false;
+ }
+ else{
+    alert("You entered correct username")
+   }
+ }
+ 
+ 
+ 
+
+</script>
+
 </head>
 
 <body>
@@ -19,6 +60,16 @@
 		<h5>(a "robo-advisor")</h5>
 	</center>
 </header>
+
+<form name= "myForm" id = "form" action=""
+ onsubmit = "return validate()">
+ 
+Username: <br> <input type ="text" id = "username"> 
+
+		  <br> <input type ="submit" value="Submit" id = "submit_button" >
+
+
+</form>
 
 <section>
   <article>
