@@ -74,19 +74,17 @@ body {
 	margin-top: -20px;
 }
 
-input, label {
-    display:block;
+
+ label {
+    display:inline-block;
 }
 
-tr td select{
-   margin-top: -17px;
-    padding: 2px;
-	width: 110px;
-	}
-	
+
+
 	tr td{
 	    padding-right: 50px;
 	}
+	
 
 input[type=submit], input[type=reset] 
 {
@@ -121,9 +119,16 @@ input[type=button]
 }
 
 
-span, #dropdownid{
-        margin-left: 40px;
+span {
+        display:block;
+		
 }
+
+.marginfix
+{
+margin-left: 100px;
+}
+
 
 </style>
 </head>
@@ -147,16 +152,15 @@ span, #dropdownid{
   
   <table id="mytable"> 
     <tr>
-	   <td><span>Institution Name</span>
-	     <input type="text" minlength="15" >
+	   <td><span class="marginfix">Institution Name</span>
+	     <label>Account 1 : <input type="text" minlength="15" ></label>
 	  </td>
 		  
-	  <td>Nickname (Optional)
+	  <td><span>Nickname (Optional)</span>
 	     <input type="text" minlength="15" >   
 	   </td>	 
 		 
-	  <td> 		  
-	  <p id="dropdownid">Name</p>
+	  <td> 		<span style="margin-left: 40px;">Account Type</span>  
 	     <select>  
 				<option disabled selected value="test0">Select an account type</option>   
 				<option value="test1">Checking</option>
@@ -170,7 +174,7 @@ span, #dropdownid{
 			</select>
 	  </td>
 	  
-	  <td><span>Test</span>
+	  <td><span style="margin-left: 50px;">Balance</span>
 	     <input type="text" minlength="15" >
 	  </td>
 	  
@@ -182,7 +186,7 @@ span, #dropdownid{
 	 <!--  Second row -->
 	 <tr>
 	   <td>
-	     <input type="text" minlength="15" >
+	     <label>Account 2 : <input type="text" minlength="15" ></label>
 	  </td>
 		  
 	  <td>
@@ -190,7 +194,7 @@ span, #dropdownid{
 	   </td>	 
 		 
 	  <td> 		  
-	     <select style="margin-top: 4px;">  
+	     <select >  
 				<option disabled selected value="test0">Select an account type</option>   
 				<option value="test1">Checking</option>
 			  <option value="test2">Savings</option>
@@ -214,7 +218,7 @@ span, #dropdownid{
 	 <!--  Third row -->
 	 <tr>
 	   <td>
-	     <input type="text" minlength="15" >
+	      <label>Account 3 : <input type="text" minlength="15" ></label>
 	  </td>
 		  
 	  <td>
@@ -222,7 +226,7 @@ span, #dropdownid{
 	   </td>	 
 		 
 	  <td> 		  
-	     <select style="margin-top: 4px;">  
+	     <select >  
 				<option disabled selected value="test0">Select an account type</option>   
 				<option value="test1">Checking</option>
 			  <option value="test2">Savings</option>
@@ -246,7 +250,7 @@ span, #dropdownid{
       <!--  Fourth row -->
 	 <tr>
 	   <td>
-	     <input type="text" minlength="15" >
+	      <label>Account 4 : <input type="text" minlength="15" ></label>
 	  </td>
 		  
 	  <td>
@@ -254,7 +258,7 @@ span, #dropdownid{
 	   </td>	 
 		 
 	  <td> 		  
-	     <select style="margin-top: 4px;">  
+	     <select >  
 				<option disabled selected value="test0">Select an account type</option>   
 				<option value="test1">Checking</option>
 			  <option value="test2">Savings</option>
@@ -275,10 +279,10 @@ span, #dropdownid{
 	  </td>  
 	 </tr>
 	 
-	 <!--  Second row -->
+	 <!--  Fifth row -->
 	 <tr>
 	   <td>
-	     <input type="text" minlength="15" >
+	      <label>Account 5 : <input type="text" minlength="15" ></label>
 	  </td>
 		  
 	  <td>
@@ -286,7 +290,7 @@ span, #dropdownid{
 	   </td>	 
 		 
 	  <td> 		  
-	     <select style="margin-top: 4px;">  
+	     <select >  
 				<option disabled selected value="test0">Select an account type</option>   
 				<option value="test1">Checking</option>
 			  <option value="test2">Savings</option>

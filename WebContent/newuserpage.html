@@ -137,13 +137,13 @@ span, #dropdownid{
   </div>
 </div>
 
-  <form name="testform" id="testform">
+  <form name="testform" id="testform" onsubmit="return Checkuserpass()">
   
     <p>Sign up for an account here.</p>
   
   <div>
-    <label>First Name <input id="newusername" > </label><br>
-	<label>Last Name <input id="newpassword" ></label> <br>
+    <label>First Name <input id="firstname" > </label><br>
+	<label>Last Name <input id="lastname" ></label> <br>
     <label>User Name <input id="newusername" > </label>  <br>
 	<label>Password <input id="newpassword" ></label>  <br>
 	</div>
@@ -165,5 +165,28 @@ span, #dropdownid{
 </div>
 
 </body>
+
+<script>
+   function Checkuserpass()
+   {
+      var pass = document.getElementById("newpassword").value;
+	  var usern =  document.getElementById("newusername").value;
+	  
+	  if(usern == "")
+	  {
+	    alert("Please enter username");
+		
+		return false;
+	  }
+
+	  if ( ((pass.length) < 8)  )
+	  {
+	     alert("Password should be greater than 8 characters and should include 2 numbers.");
+		 
+		 return false;
+	  }
+	     }
+
+</script>
 
 </html>
