@@ -6,7 +6,48 @@
 <title>WMSystems</title>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="master.css">
+<!-- <link rel="stylesheet" href="./master.css" type="text/css"> -->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #666;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 100%;
+    background-color: #f1f1f1;
+    height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+</style>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
@@ -27,7 +68,7 @@
         }
    });})
 	
- function validate()
+ function validateUsername()
  {
   var value = document.getElementById('username').value;
   
@@ -43,6 +84,15 @@
  else{
     alert("You entered correct username")
    }
+ }
+
+ function validatePassword(){
+
+ }
+
+ function validate(){
+   validateUsername();
+   validatePassword();
  }
  
  
@@ -61,30 +111,20 @@
 	</center>
 </header>
 
-<form name= "myForm" id = "form" action=""
- onsubmit = "return validate()">
- 
-Username: <br> <input type ="text" id = "username"> 
-
-		  <br> <input type ="submit" value="Submit" id = "submit_button" >
-
-
-</form>
-
 <section>
   <article>
    <center>
     <h1>Log In</h1>
     <center>
- 		<form>
+ 		<form onsubmit="return validate()">
   			User Name:
-  		<input type="text" name="username">
+  		<input type="text" name="username" id="username">
   		<br><br>
   			   Password :
-  		<input type="text" name="password">
+  		<input type="text" name="password" id="password">
   		<br><br>
-  		<input type="submit" value="Log In">
-  		<input type="submit" value="Sign Up">
+  		<input type="submit" value="Log In" onclick="location.href='./Institution_names.html';">
+  		<input type="button" value="Sign Up" onclick="location.href='./newuserpage.html';">
 		</form>   
 	</article>
 </section>
