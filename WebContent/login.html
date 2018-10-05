@@ -18,18 +18,18 @@ body {
 
 /* Style the header */
 header {
-    background-color: #666;
-    padding: 20px;
+    background-color: lightsteelblue;
+    padding: 20px, 10px;
     text-align: center;
     font-size: 25px;
-    color: white;
+    border : 1px solid gray;
 }
 
 article {
     float: left;
     padding: 20px;
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: aliceblue;
     height: 300px; /* only for demonstration, should be removed */
 }
 
@@ -42,10 +42,13 @@ section:after {
 
 /* Style the footer */
 footer {
-    background-color: #777;
-    padding: 10px;
+    bottom: 0; 
     text-align: center;
-    color: white;
+	overflow: hidden;
+    background-color: lightsteelblue;
+     padding: 20px 10px;
+    border : 1px solid gray;
+	margin-top: -20px;
 }
 </style>
 
@@ -53,7 +56,7 @@ footer {
 
 <script type="text/javascript">
   
-    $('#submit_button').click(function(){
+    $('#submit_button').click(function() {
 	alert("We made it");
 	$.ajax({
         url : '/users',
@@ -107,7 +110,7 @@ footer {
 <header>
 	<center>
 		<h2>Wealth Management System</h2>
-		<h5>(a "robo-advisor")</h5>
+		<!--  h5>(a "robo-advisor")</h5> -->
 	</center>
 </header>
 
@@ -123,8 +126,9 @@ footer {
   			   Password :
   		<input type="password" name="password" id="password">
   		<br><br>
-  		<input type="submit" value="Log In" onclick="location.href='./Institution_names.html';">
-  		<input type="button" value="Sign Up" onclick="location.href='./newuserpage.html';">
+  		<input type="submit" value="Log In" onclick="location.href='./institution.html';">
+  		<a href="./signup.html">Sign Up</a>
+  		<!--input type="button" value="Sign Up" onclick="location.href='./signup.html';" -->
 		</form>   
 	</article>
 </section>
