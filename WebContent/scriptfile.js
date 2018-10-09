@@ -2,7 +2,7 @@
 	$(document).ready(function () 
 	{		
 	
-	$('#finishbutton').hide();
+	//$('#finishbutton').hide();
 			
 	
 	jQuery.validator.addMethod(
@@ -173,6 +173,7 @@
 			inputGroup2: "balance1 balance2 balance3 balance4 balance5",
         },
 		
+		/*
 		submitHandler: function(form) 
 		{
 			form.validate();
@@ -180,7 +181,7 @@
 			alert( "Valid: " + form.valid() );
 			
 			form.submit();   
-		}
+		} */
 				  			
         });
    });
