@@ -11,7 +11,7 @@
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 		margin-top: 10px;
-		height:410px;
+		height:450px;
 		border: 1px solid lightsteelblue;
 		margin-bottom: 40px;
     }
@@ -37,6 +37,10 @@
 	{
 	  width:40%;	
 	}	
+	
+	.un.error, .pass.error {
+		border:1px solid red;
+	}
     
     .un {
    /* width: 76%;*/
@@ -79,10 +83,11 @@
     }
     
    
+    /*
     .un:focus, .pass:focus {
-        border: 2px solid rgba(0, 0, 0, 0.18) !important;
-        
+        border: 2px solid rgba(0, 0, 0, 0.18) !important; 
     }
+	*/
     
     .submit {
           cursor: pointer;
@@ -99,6 +104,24 @@
     font-size: 18px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
+	
+	.finishlater
+	{
+		cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, blue, lightsteelblue);
+    border: 0;
+    text-align: center;
+    /* padding-left: 60px; */
+    /* padding-right: 60px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 18px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+	}
     
     .forgot {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
@@ -200,8 +223,9 @@
 .error{
 	font-weight:bold;
 	font-size:1rem;
-
 }
+
+
 
 
 
