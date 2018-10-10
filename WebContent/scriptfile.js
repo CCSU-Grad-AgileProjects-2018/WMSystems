@@ -1,4 +1,14 @@
-		
+	
+function saveNewUserInfo() {
+       var storednames = [{"username": "kapperar", "password1": "password", "firstname": "Ramesh", "lastname": "Kappera"}];
+       localStorage.setItem('Users', JSON.stringify(obj));
+       alert("User infomation saved sucessfully.");
+   }
+
+  /*To store the user data in localstorage */
+  var storednames = JSON.parse(localStorage.getItem('Users'));
+
+	
 	$(document).ready(function () 
 	{		
 	
