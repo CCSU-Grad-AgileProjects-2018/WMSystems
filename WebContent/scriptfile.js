@@ -1,5 +1,6 @@
 	
-function saveNewUserInfo() {
+/* LocalStorage for sign up page */	
+	function saveNewUserInfo() {
        var storednames = [{"username": "kapperar", "password1": "password", "firstname": "Ramesh", "lastname": "Kappera"}];
        localStorage.setItem('Users', JSON.stringify(obj));
        alert("User infomation saved sucessfully.");
