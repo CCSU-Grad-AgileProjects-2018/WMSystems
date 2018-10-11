@@ -45,9 +45,15 @@ server.post('/signup', (req,res)=>{
         username: username,
         password: password
     });
+    
     newUser.save(function(err) {
-        if (err) throw err;
-        console.log(`${username} saved successfully!`);
+        if (err) {
+            res.sendStatus(500)
+        }
+        else {
+            console.log(`${username} saved successfully!`);
+            res.sendStatus(200)
+        }
     });
 });
 
