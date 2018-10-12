@@ -4,6 +4,8 @@
 * Start your favorite terminal and check if you have Node and npm installed by running
 `node -v` and `npm -v`
 
+* If these commands don't return version numbers, download and install node.js and npm from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
 * Navigate to the `WebContent` directory wherever you have the project cloned
 
 * Run `npm install`
