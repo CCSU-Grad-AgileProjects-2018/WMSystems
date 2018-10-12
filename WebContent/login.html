@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>WMSystems</title>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="./master.css" type="text/css"> -->
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: lightsteelblue;
+    padding: 20px, 10px;
+    text-align: center;
+    font-size: 25px;
+    border : 1px solid gray;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 100%;
+    background-color: aliceblue;
+    height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+footer {
+    bottom: 0; 
+    text-align: center;
+	overflow: hidden;
+    background-color: lightsteelblue;
+     padding: 20px 10px;
+    border : 1px solid gray;
+	margin-top: -20px;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  
+    $('#submit_button').click(function() {
+	alert("We made it");
+	$.ajax({
+        url : '/users',
+        method : 'GET',
+        success : function(data){
+           var response = JSON.parse(data);
+		   console.log(response);
+        },
+      
+        error: function(err){
+          console.log('Failed');
+        }
+   });})
+	
+ function validateUsername()
+ {
+  var value = document.getElementById('username').value;
+  
+  if(value == "")
+ {
+ alert("Must provide username.")
+ }
+ else if(value.length <= 8)
+ {
+ alert("Username should have atleast 8 characters.");
+ return false;
+ }
+ else{
+    alert("You entered correct username")
+   }
+ }
+
+ function validatePassword(){
+
+ }
+
+ function validate(){
+   validateUsername();
+   validatePassword();
+ }
+ 
+ 
+ 
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+	<center>
+		<h2>Wealth Management System</h2>
+		<!--  h5>(a "robo-advisor")</h5> -->
+	</center>
+</header>
+
+<section>
+  <article>
+   <center>
+    <h1>Log In</h1>
+    <center>
+ 		<form onsubmit="return validate()">
+  			User Name:
+  		<input type="text" name="username" id="username">
+  		<br><br>
+  			   Password :
+  		<input type="password" name="password" id="password">
+  		<br><br>
+  		<input type="submit" value="Log In" onclick="location.href='./institution.html';">
+  		<a href="./signup.html">Sign Up</a>
+  		<!--input type="button" value="Sign Up" onclick="location.href='./signup.html';" -->
+		</form>   
+	</article>
+</section>
+
+<footer>
+  <p>Desined by CCSU-Agile-Team-1</p>
+</footer>
+
+</body>
+
+</html>

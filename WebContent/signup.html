@@ -1,0 +1,72 @@
+<html>
+
+<title> Wealth Management System </title>
+
+<head>
+         <link rel="stylesheet" href="styles.css">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"> </script>
+
+</head>
+
+<body>
+
+<button class="btn btn-default" id="btn-confirm">Confirm</button>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="mi-modal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Confirmar</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="modal-btn-si">Yes</button>
+        <button type="button" class="btn btn-primary" id="modal-btn-no">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header">
+  <a href="#default" class="logo">Wealth Management System</a>
+  <div class="header-right">
+    <!--<a class="active" href="#home">Log out</a> -->
+  </div>
+ </div>
+ 
+   <div id="errorContainer">
+     <p id="errorhead"> Please correct the following errors and try again </p>
+	   <ul/>
+	</div>
+
+    <div class="main">
+    <p class="sign" align="center">Sign up</p>
+    <form id="form1" action="/signup" method="post">
+	  <input class="un "   id="first" type="text" align="center" name="firstname" placeholder="Firstname"/>
+	  <input class="un "   id="second" type="text" align="center" name="lastname" placeholder="Lastname" />
+      <input class="un"    id="un1" type="text" align="center" name="username" placeholder="Username" />
+      <input class="pass" type="password" align="center" id="password1" name="password1" placeholder="Password" />
+	  <input class="pass" type="password" align="center" name="passwordconfirm" id="password2" placeholder="Confirm Password" />
+      <div style="padding-bottom:20px; text-align:center">
+	  <input type="submit" value="Submit" class="submit">
+	  </div>
+	  <div  style="text-align:center">
+	    If you already have an account<a href="login.html" class="submit" style="margin-left: 20px;">Sign in</a>
+	  </div>
+	 </form>
+	   	  </div>
+	  
+	  <div class="footer">
+	  <p>Designed by CCSU-Agile-Team-1</p>
+	  </div>
+  
+</body>
+
+<script src="scriptfile.js"></script>
+
+</html>

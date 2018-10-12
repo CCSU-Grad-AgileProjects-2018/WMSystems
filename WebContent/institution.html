@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title> Wealth Management System </title>
+
+<link rel="stylesheet" href="styles.css">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<style>
+#testform
+{
+  border: 1px solid gray;
+  padding: 15px;
+  background-color: aliceblue;
+}
+  /*
+ label {
+    display:inline-block;
+	}  */
+	
+	
+	tr td{
+	    padding-right: 5px;
+		padding-bottom: 10px;
+		text-align: center; 
+	}
+	
+input[type=button]
+{
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 4px 14px;
+    /* margin-top: 5px; */
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+     margin-top: 15px; 
+   
+}
+
+
+span {
+        display:block;
+		font-weight:bold;
+		}
+
+		
+.marginfix
+{
+margin-left: 100px;
+}  
+
+
+#errorContainer
+{
+    display: none;
+    overflow: auto;
+    background-color: #e5a195;
+    padding-top: 10px;
+    padding-left: 30px;
+    width: 97%;
+    margin-left: 0px;
+    border-radius: 10px;
+}
+
+#errorContainer label
+{
+	float:none;
+	width:auto;
+}
+
+input.error {
+    font-weight: normal;
+    font-size: 13px;
+}
+select.accountdrop.error{
+    font-weight: normal;
+    font-size: inherit;;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="#default" class="logo">Wealth Management System</a>
+  <div class="header-right">
+    <a class="active" href="./login.html">Log out</a>
+   <!-- <a href="#contact">Contact</a>
+    <a href="#about">About</a> -->
+  </div>
+</div>
+
+<div id="errorContainer">
+     <p id="errorhead"> Please correct the following errors and try again </p>
+	   <ul/>
+	</div>
+
+  <form name="testform" id="testform">
+  
+   <p ><strong> Username</strong></p>
+  
+  <p style="font-size: 18px"><strong> Account(s)</strong></p>
+    
+  <p>Please provide up to five institutions where you keep your money.</p> 
+  
+  <table id="mytable"> 
+    <tr>
+	   <td><span class="marginfix">Institution Name</span>
+	     <label>Account 1 : <input class="instname" type="text" name="inst1" maxlength="15"/></label>
+	  </td>	  
+		  
+	  <td><span>Nickname (Optional)</span>
+	     <input type="text"  />   
+	   </td>	 
+		 
+	  <td> 		<span >Account Type</span>  
+	     <select name="accounttype1" class="accountdrop" />  
+				<option disabled selected value="test0">Select an account type</option>   
+				<option value="test1">Checking</option>
+			  <option value="test2">Savings</option>
+			  <option value="test3">401(k)</option>
+				<option value="test4">IRA</option>
+				<option value="test5">Money Market</option>
+			  <option value="test6">Brokerage</option>
+			  <option value="test7">Other</option>
+
+			</select>
+	  </td>
+	  
+	  <td align="center"><span  >Current Balance</span>
+	     <input type="text"  name="currentbalancedollar1" class="currentbalanceclass" size="8" />
+		 <input type="text"  name="currentbalancecents1" class="currentbalanceclass2" size="8" />
+	  </td>
+	  
+	  <td><span >Expected Balance</span>
+	     <input type="text"  name="expectbalance1" class="expectbalanceclass" size="17" />
+	  </td>	    
+	  
+	  <td>	  
+	  <input type="button" value="Edit" />
+	  </td>  
+	  
+	  <td>	  
+	  <input type="button" value="Delete" />
+	  </td>  
+	  
+	  <td>	  
+	  <input type="button" value=" Go to Goals" />
+	  </td>
+	  
+	 </tr>
+	 
+	 <!--  Second row  ********************************************************************-->
+	 <tr>
+	   <td>
+	     <label>Account 2 : <input type="text" class="instname" name="inst2" maxlength="15" /></label>
+	  </td>
+		  
+	  <td>
+	     <input type="text"  >   
+	   </td>	 
+		 
+	  <td> 		  
+	     <select name="accounttype2" class="accountdrop" />  
+				<option disabled selected value="test0">Select an account type</option>   
+				<option value="test1">Checking</option>
+			  <option value="test2">Savings</option>
+			  <option value="test3">401(k)</option>
+				<option value="test4">IRA</option>
+				<option value="test5">Money Market</option>
+			  <option value="test6">Brokerage</option>
+			  <option value="test7">Other</option>
+			</select>
+	  </td>
+	  
+	  <td>
+	     <input type="text"  name="currentbalancedollar2" class="currentbalanceclass" size="8" />
+		 <input type="text"  name="currentbalancecents2" class="currentbalanceclass2" size="8" />
+	  </td>
+	  
+	  <td>
+	     <input type="text" name="expectbalance2" class="expectbalanceclass" size="17" />
+	  </td>
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value="Edit" />
+	  </td> 
+
+		<td>	  
+	  <input style="margin-top: -2px;" type="button" value="Delete" />
+	  </td>
+
+		<td>	  
+	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  </td>
+	 </tr>
+	 
+	 <!--  Third row *************************************************************************-->
+	 <tr>
+	   <td>
+	      <label>Account 3 : <input type="text" class="instname" name="inst3" maxlength="15" /></label>
+	  </td>
+		  
+	  <td>
+	     <input type="text"  />   
+	   </td>	 
+		 
+	  <td> 		  
+	     <select name="accounttype3" class="accountdrop" />  
+				<option disabled selected value="test0">Select an account type</option>   
+				<option value="test1">Checking</option>
+			  <option value="test2">Savings</option>
+			  <option value="test3">401(k)</option>
+				<option value="test4">IRA</option>
+				<option value="test5">Money Market</option>
+			  <option value="test6">Brokerage</option>
+			  <option value="test7">Other</option>
+			</select>
+	  </td>
+	  
+	  <td>
+	    <input type="text"  name="currentbalancedollar3" class="currentbalanceclass" size="8" />
+		 <input type="text"  name="currentbalancecents3" class="currentbalanceclass2" size="8" />
+	  </td>
+	  
+	  <td>
+	     <input type="text" name="expectbalance3" class="expectbalanceclass" size="17" />
+	  </td>
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value="Edit" />
+	  </td>  
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value="Delete" />
+	  </td> 
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  </td>
+	 </tr>
+
+      <!--  Fourth row *******************************************************************************-->
+	 <tr>
+	   <td>
+	      <label>Account 4 : <input type="text" class="instname" name="inst4" maxlength="15" /></label>
+	  </td>
+		  
+	  <td>
+	     <input type="text"  >   
+	   </td>	 
+		 
+	  <td> 		  
+	     <select name="accounttype4" class="accountdrop">  
+				<option disabled selected value="test0">Select an account type</option>   
+				<option value="test1">Checking</option>
+			  <option value="test2">Savings</option>
+			  <option value="test3">401(k)</option>
+				<option value="test4">IRA</option>
+				<option value="test5">Money Market</option>
+			  <option value="test6">Brokerage</option>
+			  <option value="test7">Other</option>
+			</select>
+	  </td>
+	  
+	  <td>
+	    <input type="text"  name="currentbalancedollar4" class="currentbalanceclass" size="8" />
+		 <input type="text"  name="currentbalancecents4" class="currentbalanceclass2" size="8" />
+	  </td>
+	  
+	  <td>
+	     <input type="text" name="expectbalance4" class="expectbalanceclass" size="17" />
+	  </td>
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value="Edit" />
+	  </td>  
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value="Delete" />
+	  </td> 
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  </td>
+	 </tr>
+	 
+	 <!--  Fifth row ***********************************************************-->
+	 <tr>
+	   <td>
+	      <label>Account 5 : <input type="text" class="instname" name="inst5" maxlength="15" /></label>
+	  </td>
+		  
+	  <td>
+	     <input type="text"  >   
+	   </td>	 
+		 
+	  <td> 		  
+	     <select name="accounttype5" class="accountdrop" />  
+				<option disabled selected value="test0">Select an account type</option>   
+				<option value="test1">Checking</option>
+			  <option value="test2">Savings</option>
+			  <option value="test3">401(k)</option>
+				<option value="test4">IRA</option>
+				<option value="test5">Money Market</option>
+			  <option value="test6">Brokerage</option>
+			  <option value="test7">Other</option>
+			</select>
+	  </td>
+	  
+	  <td>
+	    <input type="text"  name="currentbalancedollar5" class="currentbalanceclass" size="8" />
+		 <input type="text"  name="currentbalancecents5" class="currentbalanceclass2" size="8" />
+	  </td>
+	  
+	  <td>
+	     <input type="text" name="expectbalance5" class="expectbalanceclass" size="17" />
+	  </td>
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value="Edit" />
+	  </td>
+
+		<td>	  
+	  <input style="margin-top: -2px;" type="button"  value="Delete" />
+	  </td> 
+	  
+	  <td>	  
+	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  </td>
+	 </tr>
+	 
+	 <button class="btn btn-default" id="btn-confirm">Confirm</button>
+  </table>
+  
+     <br><br>
+   <br>
+	
+	 <div style="text-align:-webkit-center;padding-bottom: 20px;">  <input type="submit" class="submit" value="Finish" id="finishbutton"/>  
+	  <input class="finishlater" value="Finish Later"/>  
+     </div> 
+  
+  </form>
+  
+  <div class="footer">
+  <p>Designed by CCSU-Agile-Team-1</p>
+</div>
+
+</body>
+
+		
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"> </script>
+
+<script src="scriptfile.js"></script>
+
+</html>
