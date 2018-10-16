@@ -1,0 +1,52 @@
+<html>
+<head>
+<script>
+    function addGoal(){
+        arr = document.getElementsByClassName("GoalForm");
+        if (arr.length < 5){
+            const copy = arr[0].cloneNode(true);
+            document.body.appendChild(copy);
+        }
+        
+    }
+    function checkDateAndSubmission(event){
+        event.preventDefault();
+        const el = event.target; // get element user clicked
+        const parent = el.parent; //get element parent
+        const goalNum = document.body.children.indexOf(parent);
+        const data = parent.children.split(-1);
+        const goalName = data[0];
+        const goalDate = data[1];
+        const amountNeeded = data[2];
+        //if(GoalDate){
+         //   $.ajax.post()
+        //}
+
+        const str = JSON.stringify({
+        goalName: goalName,
+        goalDate: GoalDate,
+        amountNeeded: amountNeeded,
+        goalNum:goalNum
+    })
+    }
+
+    
+</script>
+    
+
+</head>
+<body>
+    <input onclick ="addGoal()" value = "AddGoals" type = "button">
+	<form class = "GoalForm">
+    <label>GoalName</label>
+    <input class = "GoalName" type = "text">
+    <label>GoalDate</label>
+    <input class = "GoalDate">
+    <label>AmountNeeded</label>
+	<input class = "AmountNeeded">
+	<input onclick = "checkDateAndSubmission()" type="submit">
+	</form>
+	
+
+</body>
+</html>
