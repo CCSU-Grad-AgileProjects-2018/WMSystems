@@ -15,19 +15,46 @@
    return false;
 };
 }
+
+function addGoal(){
+        arr = document.getElementsByClassName("GoalForm");
+        if (arr.length < 5){
+            const copy = arr[0].cloneNode(true);
+            document.body.appendChild(copy);
+        }        
+    }
+	
+    function checkDateAndSubmission(event){
+        event.preventDefault();
+        const el = event.target; // get element user clicked
+        const parent = el.parent; //get element parent
+        const goalNum = document.body.children.indexOf(parent);
+        const data = parent.children.split(-1);
+        const goalName = data[0];
+        const goalDate = data[1];
+        const amountNeeded = data[2];
+        //if(GoalDate){
+         //   $.ajax.post()
+        //}
+
+        const str = JSON.stringify({
+        goalName: goalName,
+        goalDate: GoalDate,
+        amountNeeded: amountNeeded,
+        goalNum:goalNum
+    })
+    }
 	
 	
 	$(document).ready(function () 
 	{	
-	
-	 $(function() {
+	$(function() {
     $('.date-picker').datepicker( {
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true,
         dateFormat: 'MM yy',
-        onClose: function(dateText, inst) { 
-            
+        onClose: function(dateText, inst) {         
             
             
             function isDonePressed(){

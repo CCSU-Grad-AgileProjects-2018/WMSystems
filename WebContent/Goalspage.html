@@ -8,11 +8,49 @@
 <link rel="stylesheet" href="styles.css">
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"> </script>
+<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">
 
 
 <style>
+.GoalForm
+{
+	border: 1px solid gray;
+    padding: 15px;
+    background-color: aliceblue;
+	}
+	
+#formgoals
+{
+   border: 1px solid gray;
+    padding: 15px;
+    background-color: aliceblue;
+}	
+	
+	input[type=button]
+{
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 4px 14px;
+    /* margin-top: 5px; */
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+     margin-top: 15px; 
+   
+}
 
-
+.ui-datepicker-calendar, .ui-datepicker {
+        display: none;
+    }
 </style>
 </head>
 
@@ -27,263 +65,41 @@
   </div>
 </div>
 
-  <form name="testform" id="testform">
+<div id="formgoals">
+<p ><strong> Username</strong></p>
+ <p style="font-size: 18px"><strong> Goal(s)</strong></p>
+ 
   
-   <p ><strong> Username</strong></p>
+<input onclick ="addGoal()" value ="Add Goals" type = "button" style="margin-bottom:10px;">  
   
-  <p style="font-size: 18px"><strong> Goal(s)</strong></p>
-    
-  <p>Please provide up to five institutions where you keep your money.</p> 
-  
-  <table id="mytable"> 
-    <tr>
-	   <td><span class="marginfix">Institution Name</span>
-	     <label>Account 1 : <input class="instname" type="text"  name="inst1" maxlength="15" /></label>
-	  </td>	  
-		  
-	  <td><span>Nickname (Optional)</span>
-	     <input type="text"  />   
-	   </td>	 
-		 
-	  <td> 		<span >Account Type</span>  
-	     <select name="accounttype1" class="accountdrop" />  
-				<option disabled selected value="test0">Select an account type</option>   
-				<option value="test1">Checking</option>
-			  <option value="test2">Savings</option>
-			  <option value="test3">401(k)</option>
-				<option value="test4">IRA</option>
-				<option value="test5">Money Market</option>
-			  <option value="test6">Brokerage</option>
-			  <option value="test7">Other</option>
-
-			</select>
-	  </td>
-	  
-	  <td align="center"><span  >Current Balance</span>
-	     <input type="text"  name="currentbalancedollar1" class="currentbalanceclass" size="8" />
-		 <input type="text"  name="currentbalancecents1" class="currentbalanceclass2" size="8" />
-	  </td>
-	  
-	  <td><span >Expected Balance</span>
-	     <input type="text"  name="expectbalance1" class="expectbalanceclass" id="ebalance1" size="17" />
-	  </td>	    
-	  
-	  <td>	  
-	  <input type="button" value="Edit" />
-	  </td>  
-	  
-	  <td>	  
-	  <input type="button" value="Delete" onclick="confirmbox1();" />
-	  </td>  
-	  
-	  <td>	  
-	  <input type="button" id="gotogoals1" value=" Go to Goals" />
-	  </td>
-	  
-	 </tr>
-	 
-	 <!--  Second row  ********************************************************************-->
-	 <tr>
-	   <td>
-	     <label>Account 2 : <input type="text" class="instname" name="inst2" maxlength="15" /></label>
-	  </td>
-		  
-	  <td>
-	     <input type="text"  >   
-	   </td>	 
-		 
-	  <td> 		  
-	     <select name="accounttype2" class="accountdrop" />  
-				<option disabled selected value="test0">Select an account type</option>   
-				<option value="test1">Checking</option>
-			  <option value="test2">Savings</option>
-			  <option value="test3">401(k)</option>
-				<option value="test4">IRA</option>
-				<option value="test5">Money Market</option>
-			  <option value="test6">Brokerage</option>
-			  <option value="test7">Other</option>
-			</select>
-	  </td>
-	  
-	  <td>
-	     <input type="text"  name="currentbalancedollar2" class="currentbalanceclass" size="8" />
-		 <input type="text"  name="currentbalancecents2" class="currentbalanceclass2" size="8" />
-	  </td>
-	  
-	  <td>
-	     <input type="text" name="expectbalance2" class="expectbalanceclass" id="ebalance2" size="17" />
-	  </td>
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value="Edit" />
-	  </td> 
-
-		<td>	  
-	  <input style="margin-top: -2px;" type="button" value="Delete" />
-	  </td>
-
-		<td>	  
-	  <input style="margin-top: -2px;" type="button"  id="gotogoals2" value=" Go to Goals" />
-	  </td>
-	 </tr>
-	 
-	 <!--  Third row *************************************************************************-->
-	 <tr>
-	   <td>
-	      <label>Account 3 : <input type="text" class="instname" name="inst3" maxlength="15" /></label>
-	  </td>
-		  
-	  <td>
-	     <input type="text"  />   
-	   </td>	 
-		 
-	  <td> 		  
-	     <select name="accounttype3" class="accountdrop" />  
-				<option disabled selected value="test0">Select an account type</option>   
-				<option value="test1">Checking</option>
-			  <option value="test2">Savings</option>
-			  <option value="test3">401(k)</option>
-				<option value="test4">IRA</option>
-				<option value="test5">Money Market</option>
-			  <option value="test6">Brokerage</option>
-			  <option value="test7">Other</option>
-			</select>
-	  </td>
-	  
-	  <td>
-	    <input type="text"  name="currentbalancedollar3" class="currentbalanceclass" size="8" />
-		 <input type="text"  name="currentbalancecents3" class="currentbalanceclass2" size="8" />
-	  </td>
-	  
-	  <td>
-	     <input type="text" name="expectbalance3" class="expectbalanceclass"  id="ebalance3" size="17" />
-	  </td>
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value="Edit" />
-	  </td>  
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value="Delete" />
-	  </td> 
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" id="gotogoals3" value=" Go to Goals" />
-	  </td>
-	 </tr>
-
-      <!--  Fourth row *******************************************************************************-->
-	 <tr>
-	   <td>
-	      <label>Account 4 : <input type="text" class="instname" name="inst4" maxlength="15" /></label>
-	  </td>
-		  
-	  <td>
-	     <input type="text"  >   
-	   </td>	 
-		 
-	  <td> 		  
-	     <select name="accounttype4" class="accountdrop">  
-				<option disabled selected value="test0">Select an account type</option>   
-				<option value="test1">Checking</option>
-			  <option value="test2">Savings</option>
-			  <option value="test3">401(k)</option>
-				<option value="test4">IRA</option>
-				<option value="test5">Money Market</option>
-			  <option value="test6">Brokerage</option>
-			  <option value="test7">Other</option>
-			</select>
-	  </td>
-	  
-	  <td>
-	    <input type="text"  name="currentbalancedollar4" class="currentbalanceclass" size="8" />
-		 <input type="text"  name="currentbalancecents4" class="currentbalanceclass2" size="8" />
-	  </td>
-	  
-	  <td>
-	     <input type="text" name="expectbalance4" class="expectbalanceclass" id="ebalance4" size="17" />
-	  </td>
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value="Edit" />
-	  </td>  
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value="Delete" />
-	  </td> 
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" id="gotogoals4" value=" Go to Goals" />
-	  </td>
-	 </tr>
-	 
-	 <!--  Fifth row ***********************************************************-->
-	 <tr>
-	   <td>
-	      <label>Account 5 : <input type="text" class="instname" name="inst5" maxlength="15" /></label>
-	  </td>
-		  
-	  <td>
-	     <input type="text"  >   
-	   </td>	 
-		 
-	  <td> 		  
-	     <select name="accounttype5" class="accountdrop" />  
-				<option disabled selected value="test0">Select an account type</option>   
-				<option value="test1">Checking</option>
-			  <option value="test2">Savings</option>
-			  <option value="test3">401(k)</option>
-				<option value="test4">IRA</option>
-				<option value="test5">Money Market</option>
-			  <option value="test6">Brokerage</option>
-			  <option value="test7">Other</option>
-			</select>
-	  </td>
-	  
-	  <td>
-	    <input type="text"  name="currentbalancedollar5" class="currentbalanceclass" size="8" />
-		 <input type="text"  name="currentbalancecents5" class="currentbalanceclass2" size="8" />
-	  </td>
-	  
-	  <td>
-	     <input type="text" name="expectbalance5" class="expectbalanceclass" id="ebalance5" size="17" />
-	  </td>
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value="Edit" />
-	  </td>
-
-		<td>	  
-	  <input style="margin-top: -2px;" type="button"  value="Delete" />
-	  </td> 
-	  
-	  <td>	  
-	  <input style="margin-top: -2px;" type="button" id="gotogoals5" value=" Go to Goals" />
-	  </td>
-	 </tr>
-	 
-  </table>
-  
-     <br><br>
-   <br>
+   <form class="GoalForm" >	
+    <label>Goal Name</label>
+    <input class = "GoalName" type = "text">
 	
-	 <div style="text-align:-webkit-center;padding-bottom: 20px;">  <input type="submit" class="submit" value="Finish" id="finishbutton"/>  
-	  <input class="finishlater" value="Finish Later"/>  
-     </div> 
+    <label>Goal Date</label>
+    <input class = "GoalDate" size="8">
+	
+    <label>Amount</label>
+	<input class = "AmountNeeded" size="8">
+	
+	<label>Goal Timeframe</label>
+	<input class = "AmountNeeded" size="8">
+	
+	<label>Target Date</label>
+	<input class = "date-picker" size="10" >
+	
+	<input onclick = "checkDateAndSubmission()" type="submit" />  
+    <br>	
+  </form> 
+
+  </div>  
   
-  </form>
   
-  <div class="footer">
-  <p>Designed by CCSU-Agile-Team-1</p>
-</div>
+  
 
 </body>
 
 		
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"> </script>
-
 <script src="scriptfile.js"></script>
 
 </html>
