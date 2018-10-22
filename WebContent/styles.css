@@ -262,6 +262,11 @@
 {
     text-align: left;
     margin-bottom: 8px;
+
+	
+.ui-datepicker-calendar, .ui-datepicker
+{
+    display: none;
 }
 
 
