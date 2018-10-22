@@ -1,44 +1,71 @@
+
+	function confirmbox1(){
+	document.getElementById('id_confrmdiv').style.display="block"; 
+
+	document.getElementById('id_truebtn').onclick = function(){
+   //do your delete operation
+    alert('true');
+   };
+
+	document.getElementById('id_falsebtn').onclick = function(){
+     alert('false');
+	 
+	document.getElementById('id_confrmdiv').style.display="none";
 	
-/* LocalStorage for sign up page */	
-	function saveNewUserInfo() {
-       var storednames = [{"username": "kapperar", "password1": "password", "firstname": "Ramesh", "lastname": "Kappera"}];
-       localStorage.setItem('Users', JSON.stringify(obj));
-       alert("User infomation saved sucessfully.");
-   }
-
-  /*To store the user data in localstorage */
-  var storednames = JSON.parse(localStorage.getItem('Users'));
-  
-  var modalConfirm = function(callback){
-  
-  $("#btn-confirm").on("click", function(){
-    $("#mi-modal").modal('show');
-  });
-
-  $("#modal-btn-si").on("click", function(){
-    callback(true);
-    $("#mi-modal").modal('hide');
-  });
-  
-  $("#modal-btn-no").on("click", function(){
-    callback(false);
-    $("#mi-modal").modal('hide');
-  });
+   return false;
 };
-
-modalConfirm(function(confirm){
-  if(confirm){
-    //Acciones si el usuario confirma
-    $("#result").html("CONFIRMADO");
-  }else{
-    //Acciones si el usuario no confirma
-    $("#result").html("NO CONFIRMADO");
-  }
-});
-
+}
+	
 	
 	$(document).ready(function () 
-	{				
+	{	
+
+	var num = $("#datevalue").val();
+     alert(num);
+   
+		
+	$('#ebalance1').keyup(function() {			
+    if($(this).val() == '')
+	{
+        $('#gotogoals1').hide();
+    }else{
+        $('#gotogoals1').show();
+    }
+	})
+	$('#ebalance2').keyup(function() {			
+    if($(this).val() == '')
+	{
+        $('#gotogoals2').hide();
+    }else{
+        $('#gotogoals2').show();
+    }
+	})
+	$('#ebalance3').keyup(function() {			
+    if($(this).val() == '')
+	{
+        $('#gotogoals3').hide();
+    }else{
+        $('#gotogoals3').show();
+    }
+	})
+	$('#ebalance4').keyup(function() {			
+    if($(this).val() == '')
+	{
+        $('#gotogoals4').hide();
+    }else{
+        $('#gotogoals4').show();
+    }
+	})
+	$('#ebalance5').keyup(function() {			
+    if($(this).val() == '')
+	{
+        $('#gotogoals5').hide();
+    }else{
+        $('#gotogoals5').show();
+    }
+	})
+
+
 	
 	jQuery.validator.addMethod(
         'ContainsAtLeastTwoDigit',
@@ -298,3 +325,6 @@ modalConfirm(function(confirm){
         });
    });
     });
+	
+	
+	

@@ -99,6 +99,11 @@ select.accountdrop.error{
   </div>
 </div>
 
+<div id="id_confrmdiv">Are you sure ?
+    <button id="id_truebtn">Yes</button>
+    <button id="id_falsebtn">No</button>
+</div>
+
 <div id="errorContainer">
      <p id="errorhead"> Please correct the following errors and try again </p>
 	   <ul/>
@@ -115,7 +120,7 @@ select.accountdrop.error{
   <table id="mytable"> 
     <tr>
 	   <td><span class="marginfix">Institution Name</span>
-	     <label>Account 1 : <input class="instname" type="text" name="inst1" maxlength="15"/></label>
+	     <label>Account 1 : <input class="instname" type="text"  name="inst1" maxlength="15" /></label>
 	  </td>	  
 		  
 	  <td><span>Nickname (Optional)</span>
@@ -142,7 +147,7 @@ select.accountdrop.error{
 	  </td>
 	  
 	  <td><span >Expected Balance</span>
-	     <input type="text"  name="expectbalance1" class="expectbalanceclass" size="17" />
+	     <input type="text"  name="expectbalance1" class="expectbalanceclass" id="ebalance1" size="17" />
 	  </td>	    
 	  
 	  <td>	  
@@ -150,11 +155,11 @@ select.accountdrop.error{
 	  </td>  
 	  
 	  <td>	  
-	  <input type="button" value="Delete" />
+	  <input type="button" value="Delete" onclick="confirmbox1();" />
 	  </td>  
 	  
 	  <td>	  
-	  <input type="button" value=" Go to Goals" />
+	  <input type="button" id="gotogoals1" value=" Go to Goals" />
 	  </td>
 	  
 	 </tr>
@@ -188,7 +193,7 @@ select.accountdrop.error{
 	  </td>
 	  
 	  <td>
-	     <input type="text" name="expectbalance2" class="expectbalanceclass" size="17" />
+	     <input type="text" name="expectbalance2" class="expectbalanceclass" id="ebalance2" size="17" />
 	  </td>
 	  
 	  <td>	  
@@ -200,7 +205,7 @@ select.accountdrop.error{
 	  </td>
 
 		<td>	  
-	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  <input style="margin-top: -2px;" type="button"  id="gotogoals2" value=" Go to Goals" />
 	  </td>
 	 </tr>
 	 
@@ -233,7 +238,7 @@ select.accountdrop.error{
 	  </td>
 	  
 	  <td>
-	     <input type="text" name="expectbalance3" class="expectbalanceclass" size="17" />
+	     <input type="text" name="expectbalance3" class="expectbalanceclass"  id="ebalance3" size="17" />
 	  </td>
 	  
 	  <td>	  
@@ -245,7 +250,7 @@ select.accountdrop.error{
 	  </td> 
 	  
 	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  <input style="margin-top: -2px;" type="button" id="gotogoals3" value=" Go to Goals" />
 	  </td>
 	 </tr>
 
@@ -278,7 +283,7 @@ select.accountdrop.error{
 	  </td>
 	  
 	  <td>
-	     <input type="text" name="expectbalance4" class="expectbalanceclass" size="17" />
+	     <input type="text" name="expectbalance4" class="expectbalanceclass" id="ebalance4" size="17" />
 	  </td>
 	  
 	  <td>	  
@@ -290,7 +295,7 @@ select.accountdrop.error{
 	  </td> 
 	  
 	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  <input style="margin-top: -2px;" type="button" id="gotogoals4" value=" Go to Goals" />
 	  </td>
 	 </tr>
 	 
@@ -323,7 +328,7 @@ select.accountdrop.error{
 	  </td>
 	  
 	  <td>
-	     <input type="text" name="expectbalance5" class="expectbalanceclass" size="17" />
+	     <input type="text" name="expectbalance5" class="expectbalanceclass" id="ebalance5" size="17" />
 	  </td>
 	  
 	  <td>	  
@@ -335,7 +340,7 @@ select.accountdrop.error{
 	  </td> 
 	  
 	  <td>	  
-	  <input style="margin-top: -2px;" type="button" value=" Go to Goals" />
+	  <input style="margin-top: -2px;" type="button" id="gotogoals5" value=" Go to Goals" />
 	  </td>
 	 </tr>
 	 
