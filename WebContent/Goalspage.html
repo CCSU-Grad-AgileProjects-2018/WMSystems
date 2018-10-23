@@ -68,26 +68,28 @@
 <div id="formgoals">
 <p ><strong> Username</strong></p>
  <p style="font-size: 18px"><strong> Goal(s)</strong></p>
- 
   
 <input onclick ="addGoal()" value ="Add Goals" type = "button" style="margin-bottom:10px;">  
+
+<input value ="Finish" type = "button" style="margin-bottom:10px;">  
   
    <form class="GoalForm" >	
     <label>Goal Name</label>
-    <input class = "GoalName" type = "text">
+    <input class = "GoalName" maxlength="20"type = "text">
 	
     <label>Amount</label>
-	<input class = "AmountNeeded" size="8">
+	<input class = "AmountNeeded" maxlength="20" size="8">
 	
 	<label>Goal Timeframe</label>
-	<input class = "AmountNeeded" size="8">
+	<input class = "AmountNeeded"  maxlength="20" size="8">
 	
 	<label>Target Date</label>
-	<input class = "date-picker" size="10" >
+	<input class = "date-picker" maxlength="20" size="10" >
 	
-	<input onclick = "checkDateAndSubmission()" type="submit" />  
+	<!--<input onclick = "checkDateAndSubmission()" type="submit"  value="Finish"/> -->
     <br>	
   </form> 
+  
 
   </div>  
   

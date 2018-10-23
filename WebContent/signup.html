@@ -51,6 +51,30 @@
   
 </body>
 
+<script type="text/javascript">
+    var frm = $('#form1');
+
+    frm.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+				
+				location.href = "/institution.html"
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+</script>
+
 <script src="scriptfile.js"></script>
 
 </html>
