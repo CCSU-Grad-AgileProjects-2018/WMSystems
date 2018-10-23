@@ -4,11 +4,11 @@
 
 	document.getElementById('id_truebtn').onclick = function(){
    //do your delete operation
-    alert('true');
+   
    };
 
 	document.getElementById('id_falsebtn').onclick = function(){
-     alert('false');
+     
 	 
 	document.getElementById('id_confrmdiv').style.display="none";
 	
@@ -46,10 +46,11 @@ function addGoal(){
     }
 	
 	
-	$(document).ready(function () 
+	$(document).ready(function ()  
 	{	
 	$(function() {
-    $('.date-picker').datepicker( {
+   // $('.date-picker').datepicker( {
+	   $('.date-picker').datepicker( {
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true,
