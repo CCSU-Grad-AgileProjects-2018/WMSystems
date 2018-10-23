@@ -17,6 +17,7 @@
 };
 }
 
+/* Adding Button for users to include additional goals */
 function addGoal(){
         arr = document.getElementsByClassName("GoalForm");
         if (arr.length < 5){
@@ -49,6 +50,7 @@ function addGoal(){
 	
 	$(document).ready(function ()  
 	{	
+	/* Selecting month and year for the date using datepicker */
 	$(function() {
    // $('.date-picker').datepicker( {
 	   $('.date-picker').datepicker( {
@@ -68,8 +70,6 @@ function addGoal(){
                             var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
                             var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
                             $(this).datepicker('setDate', new Date(year, month, 1));
-                             console.log('Done is pressed')
-
                         }
             
             
@@ -78,7 +78,7 @@ function addGoal(){
     });
 });
 
-	
+	/*Show and hide the go to goals button after each field is filled for an account */
 		
 	$('#ebalance1').keyup(function() {			
     if($(this).val() == '')
@@ -122,7 +122,7 @@ function addGoal(){
 	})
 
 
-	
+	/*Validating for the login and sign up page */
 	jQuery.validator.addMethod(
         'ContainsAtLeastTwoDigit',
         function (value) { 
