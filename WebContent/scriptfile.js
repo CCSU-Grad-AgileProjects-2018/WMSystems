@@ -1,4 +1,5 @@
 
+/* Display the alert message box for the delete account option */
 	function confirmbox1(){
 	document.getElementById('id_confrmdiv').style.display="block"; 
 

@@ -45,24 +45,26 @@
   
 </body>
 
-<script type='text/javascript'>
-    /* attach a submit handler to the form */
-    $("#form1").submit(function(event) {
+<script type="text/javascript">
+    var frm = $('#form1');
 
-      /* stop form from submitting normally */
-      event.preventDefault();
+    frm.submit(function (e) {
 
-      /* get the action attribute from the <form action=""> element */
-      var $form = $( this ),
-          url = $form.attr( 'login' );
+        e.preventDefault();
 
-      /* Send the data using post with element id name and password*/
-      var formdata = $.post( url, { name: $('#username').val(), password: $('#password1').val() } );
-
-      /* Alerts the results */
-      formdata.done(function( data ) {
-        alert('success');
-      });
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
     });
 </script>
 
